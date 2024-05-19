@@ -3,10 +3,11 @@ from ultralytics import YOLO
 import cvzone
 import numpy as np
 import pandas as pd
-from collections import Counter
+from collections import Counter  # Import Counter from collections module
 import glob
 
-model = YOLO("yolov8.pt") #path del modelo
+model = YOLO("/home/tfg_2324/yolov8.pt")
+
 
 class_list = "0"
 
@@ -36,7 +37,7 @@ def count_objects_in_image(object_classes):
     for obj, count in counter.items():
         print(f"{obj}: {count}")
 
-path = r'C:\Users\freed\Downloads\yolov8img\images\*.*' #path de la imagen
+path = r'/home/tfg_2324/sentados.jpg'
 for file in glob.glob(path):
     img = cv2.imread(file)
     img = cv2.resize(img, (1020, 500))
