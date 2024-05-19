@@ -20,6 +20,8 @@ ruta_imagen_remota = "/home/tfg_2324/sentados.jpg" #imagen a probar
 ruta_imagen_local_yolo = "salida1.png" 
 ruta_imagen_local_SSDM = "salida2.png"
 ruta_imagen_local_Effi = "salida3.png"
+ruta_entorno_virtual = "/home/tfg_2324/tutorial-env/bin/activate" #ruta entorno virtual. Retirar en caso de tener 
+#permisos para descargar y utilizar todas la librerías necesarias para ejecutar los scripts de las inferencias.
 
 def ssh_connect():
     try:
@@ -34,7 +36,8 @@ def ssh_connect():
 
 def ejecutar_script_remoto(cliente_ssh, ruta_script, ruta_imagen_local, text_widget):
     try:
-        stdin, stdout, stderr = cliente_ssh.exec_command(f"python3 {ruta_script}")
+        comando = f"source {ruta_entorno_virtual} && python3 {ruta_script}"
+        stdin, stdout, stderr = cliente_ssh.exec_command(comando)
         salida = stdout.read().decode()
         errores = stderr.read().decode()
         if errores:
