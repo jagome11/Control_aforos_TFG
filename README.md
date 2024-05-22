@@ -1,9 +1,6 @@
 # Evaluación de modelos de IA para el control de aforos en dispositivos de bajo consumo.
 TFG realizado por Javier Gómez y Pablo Sánchez-Rodilla.
 
-## YOLOv8: 
-### Notebook
-En caso de querer ejecutar un entrenamiento en Jupyter Notebook o Google Colab y probar un modelo concreto de Ultralytics descargar train_yolov8.ipynb.
 
 ## EfficientDet: 
 ### Notebook

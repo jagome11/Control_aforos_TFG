@@ -1,0 +1,1 @@
+En train_yolov8.ipynb hay un entrenamiento con otro dataset, pero se obtienen resultados muy interesantes.
