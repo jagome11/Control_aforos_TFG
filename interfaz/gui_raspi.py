@@ -6,22 +6,21 @@ import paramiko
 from PIL import Image, ImageTk
 import os
 
-ip = "bujaruelo.dacya.ucm.es"
-port = 22
-username = "tfg_2324"
-password = "rLj%23_?"
-#Esta información hay que editarla en función de la conexión que se vaya a realizar
+ip = "pc-fran.dacya.ucm.es"
+port = 16994
+username = "sergio"
+password = "Raspi2023!"
 
-#scripts de prueba
-ruta_script_yolo = "/home/tfg_2324/hola.py" #script ara ejecutar la infrencia en yolo
-ruta_script_SSDM = "/home/tfg_2324/hola2.py" #script ara ejecutar la infrencia en SSD-MobileNet
-ruta_script_Effi = "/home/tfg_2324/hola3.py" #script ara ejecutar la infrencia en EfficentDet
-ruta_imagen_remota = "/home/tfg_2324/sentados.jpg" #imagen a probar
-ruta_imagen_local_yolo = "salida1.png" 
+ruta_script_yolo = "/home/sergio/tutorial-env/yolov8_test_img.py"
+ruta_script_SSDM = "/home/sergio/tutorial-env/yolov8_test_img.py"
+ruta_script_Effi = ""
+ruta_imagen_remota = "/home/sergio/tutorial-env/test_image2.jpg"
+ruta_imagen_local_yolo = "salida1.png"
+
+
 ruta_imagen_local_SSDM = "salida2.png"
 ruta_imagen_local_Effi = "salida3.png"
-ruta_entorno_virtual = "/home/tfg_2324/tutorial-env/bin/activate" #ruta entorno virtual. Retirar en caso de tener 
-#permisos para descargar y utilizar todas la librerías necesarias para ejecutar los scripts de las inferencias.
+ruta_entorno_virtual = "/home/sergio/tutorial-env/bin/activate"
 
 def ssh_connect():
     try:
